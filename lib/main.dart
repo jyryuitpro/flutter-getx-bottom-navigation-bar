@@ -1,4 +1,5 @@
 import 'package:bottom_navigation_flutter/pages/dashboard/dashboard.dart';
+import 'package:bottom_navigation_flutter/pages/dashboard/dashboard_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,9 +19,13 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => MyDashBoard()),
+        GetPage(
+          name: '/',
+          page: () => MyDashBoard(),
+          binding: DashBoardBinding(),
+        ),
       ],
-      home: MyDashBoard(),
+      // home: MyDashBoard(),
     );
   }
 }

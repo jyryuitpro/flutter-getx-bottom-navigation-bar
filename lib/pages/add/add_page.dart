@@ -1,14 +1,10 @@
+import 'package:bottom_navigation_flutter/pages/add/add_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class AddPage extends StatefulWidget {
-  const AddPage({Key? key}) : super(key: key);
+class AddPage extends GetView<AddController> {
 
-  @override
-  _AddPageState createState() => _AddPageState();
-}
-
-class _AddPageState extends State<AddPage> {
   int counter=0;
   @override
   Widget build(BuildContext context) {
@@ -19,9 +15,7 @@ class _AddPageState extends State<AddPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "$counter"
-              ),
+              Obx(() => Text('${controller.counter.value}')),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary:Colors.redAccent,
@@ -31,14 +25,10 @@ class _AddPageState extends State<AddPage> {
                     )
                 ),
                 child: Text("Increase"),
-                onPressed: (){
-                  setState(() {
-                    counter++;
-                  });
+                onPressed: () {
+                  controller.increaseCounter();
                 },
               ),
-
-
             ],
           ),
         ),

@@ -1,13 +1,14 @@
+import 'package:bottom_navigation_flutter/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends GetView<HomePageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Home page",
+          controller.title,
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0,

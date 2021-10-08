@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
 
-class MessagesPage extends GetxController {
+class MessagesPageController extends GetxController {
 
 }
